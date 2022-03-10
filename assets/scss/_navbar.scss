@@ -1,0 +1,76 @@
+.nav--collapse {
+  @include flx(center, row, flex-end);
+  height: auto;
+  position: relative;
+  width: 100%;
+
+  @include for-desktop-only {
+    @include flx(center, row, center);
+    width: auto;
+  }
+
+  & button {
+    background: url(../img/icons/menu-burger-open.svg) no-repeat center / 2.5rem border-box;
+    border: none;
+    border-radius: 1rem;
+    display: block;
+    height: 3rem;
+    position: absolute;
+    right: 1rem;
+    width: 3rem;
+
+    &.active {
+      background: url(../img/icons/menu-burger-close.png) no-repeat center / 2.5rem border-box;
+    }
+
+    @include for-desktop-only {
+      display: none;
+    }
+  }
+
+  & ul.nav--menu {
+    display: none;
+
+    @include for-desktop-only {
+      @include flx(center, row, center);
+      gap: 2rem;
+
+      & li:nth-child(n+5):nth-child(-n+6) {
+        display: none;
+      }
+    }
+  }
+
+  & ul.nav--menu.active {
+    @include flx(flex-start, column, flex-start);
+    animation: openList .5s linear;
+    animation-fill-mode: forwards;
+    background-color: $brown-light;
+    position: absolute;
+    top: calc(100% + 1rem);
+    width: auto;
+
+    & li {
+      @include flx(center, row, flex-start);
+      border-bottom: .0625rem solid $bg-gradient-2;
+      height: 3.5rem;
+      padding: 0 1rem;
+      text-overflow: clip;
+      white-space: nowrap;
+      width: 100%;
+
+      & a {
+        color: $black;
+      }
+    }
+  }
+}
+
+@keyframes openList {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%;
+  }
+}

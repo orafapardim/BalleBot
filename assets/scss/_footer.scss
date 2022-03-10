@@ -1,0 +1,16 @@
+.footer {
+  @include flx(center, row, center);
+  border-top: .0625rem solid $brown-light;
+  height: 10vh;
+  padding: 1.5rem;
+
+  & a, & .logo--ballerini {
+    height: 100%;
+  }
+}
+
+@include for-ultrawaid-only {
+  .footer {
+    padding: 1rem 20%;
+  }
+}

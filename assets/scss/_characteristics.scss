@@ -1,0 +1,22 @@
+.characteristics {
+  @include flx(center, column, center);
+
+  &__list {
+    @include flx(flex-start, column, center);
+    flex: 1;
+    gap: 1rem;
+    list-style: revert;
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    width: 100%;
+  }
+
+  @include for-desktop-only {
+    @include grd-pos(1, 3, 2, 3);
+
+    &__list {
+      align-items: center;
+      margin: 3rem 0;
+    }
+  }
+}

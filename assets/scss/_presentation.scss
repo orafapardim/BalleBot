@@ -1,0 +1,11 @@
+.presentation {
+  @include flx(flex-start, column, flex-start);
+  gap: 2rem;
+  width: 100%;
+
+  @include for-desktop-only {
+    @include grd-pos(1, 2, 1, 2);
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+}

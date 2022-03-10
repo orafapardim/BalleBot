@@ -1,0 +1,13 @@
+.balle {
+  @include flx(flex-end, column, flex-start);
+
+  &--image {
+    height: 100%;
+    max-width: 100%;
+  }
+
+  @include for-desktop-only {
+    @include grd-pos(2, 3, 1, 2);
+    height: 100%;
+  }
+}
